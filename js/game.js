@@ -17,7 +17,9 @@ $("#reset").click(function(){
 var PlaceAndUpdateMarker = function(button){
 	$(button).val(currentMarker);
 	$(button).prop("disabled",true);
-	var isWinner = CheckWinningConditions(currentMarker);
+	var isWinner =  false;
+	if(chanceCount>4)
+		isWinner = CheckWinningConditions(currentMarker);
 	chanceCount++;
 	if(isWinner===true)
 	{
